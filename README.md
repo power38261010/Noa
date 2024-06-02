@@ -73,7 +73,7 @@ Luego ejecutamos
 
 ./vendor/bin/sail up
 
-Desde otra pestaña de la consola de tu SO  ejecutar en el siguiente orden:
+Desde otra pestaña de la consola ejecutar en el siguiente orden:
 
 1-
 ./vendor/bin/sail artisan migrate 
