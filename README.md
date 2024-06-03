@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/witaut/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -47,21 +47,28 @@ Por ultimo verificamos la isntalacion
 docker-compose --version
 
 
-Luego de ello nos dirigimos al repositorio en github "https://github.com/power38261010/Noa/tree/master"
+Luego de ello nos dirigimos al repositorio en github "https://github.com/power38261010/Noa/tree/witaut"
 
 
-Elegir la rama "master"
+Elegir la rama "witaut"
 
 Clonarse el repositorio via: https://github.com/power38261010/Noa.git
 
 Luego de elegir una carpeta ejecutar
 
-git checkout master
+git checkout witaut
 
 Luego reemplazar el nombre del archivo ".env.example" por el nombre ".env" 
 
 A continuacion en la consola  (estando en la raiz) ejecutamos:
 
+npm install
+
+Luego
+
+npm run build
+
+Por Ultimo
 docker run --rm \
     -u "$(id -u):$(id -g)" \
     -v $(pwd):/opt \
@@ -69,7 +76,7 @@ docker run --rm \
     laravelsail/php80-composer:latest \
     composer install --ignore-platform-reqs
 
-Luego ejecutamos
+Luego ejecutamos ( en caso de no existir BD y registros)
 
 ./vendor/bin/sail up
 
