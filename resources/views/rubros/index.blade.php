@@ -29,7 +29,6 @@
 <table class="table table-bordered bg-white">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Rubro</th>
             <th width="280px">Acciones</th>
         </tr>
@@ -37,7 +36,6 @@
     <tbody>
         @foreach ($rubros as $rubro)
             <tr>
-                <td>{{ $rubro->id }}</td>
                 <td>{{ $rubro->rubro }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{ route('rubros.edit', $rubro->id) }}">

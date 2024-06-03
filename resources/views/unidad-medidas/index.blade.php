@@ -29,7 +29,6 @@
 <table class="table table-bordered bg-white">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Código</th>
             <th>Unidad de Medida</th>
             <th width="280px">Acciones</th>
@@ -38,7 +37,6 @@
     <tbody>
         @foreach ($unidadesMedida as $unidadMedida)
             <tr>
-                <td>{{ $unidadMedida->id }}</td>
                 <td>{{ $unidadMedida->codigo }}</td>
                 <td>{{ $unidadMedida->unidad_medida }}</td>
                 <td>

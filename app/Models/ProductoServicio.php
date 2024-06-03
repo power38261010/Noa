@@ -15,7 +15,8 @@ class ProductoServicio extends Model {
         'precio_bruto_unitario',
         'id_rubro',
         'id_condicion_iva',
-        'id_unidad_medida'
+        'id_unidad_medida',
+        'created_at'
     ];
 
     // ------------------------------------------------------
