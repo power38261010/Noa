@@ -16,7 +16,7 @@ class ProductoServicioRepo extends BaseRepo {
         return new ProductoServicio();
     }
 
-    public function search(string $search = '', string $tipo = "", int $id_rubro = 0, int $id_condicion_iva = 0, int $id_unidad_medida = 0, string $date_filter = '') {
+    public function search(bool $withSum = false, string $search = '', string $tipo = "", int $id_rubro = 0, int $id_condicion_iva = 0, int $id_unidad_medida = 0, string $date_filter = '') {
         $qry = ProductoServicio::query()
             ->with(['rubro', 'unidadMedida', 'condicionIva']);
 
@@ -59,7 +59,21 @@ class ProductoServicioRepo extends BaseRepo {
             });
         }
 
+        if ($withSum) {
+            $totalSum = $qry->sum('precio_bruto_unitario');
+            $totalSumWithIva = $qry->get()->sum(function($item) {
+                return $item->precio_bruto_unitario + (($item->precio_bruto_unitario * $item->condicionIva->alicuota) / 100);
+            });
+
+            return [
+                'productosServicios' => $qry->simplePaginate(10),
+                'totalSum' => $totalSum,
+                'totalSumWithIva' => $totalSumWithIva
+            ];
+        }
+
         return $qry->simplePaginate(10);
     }
+
 
 }

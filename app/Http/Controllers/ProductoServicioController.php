@@ -39,18 +39,12 @@ class ProductoServicioController extends Controller {
         $id_unidad_medida = $request->get('unidad_medida') ?? 0;
         $date_filter = $request->get('date_filter') ?? '';
 
-        $productosServicios = $this->productServiceRepo->search($search, $tipo, $id_rubro, $id_condicion_iva, $id_unidad_medida, $date_filter);
-        $productosServiciosCollection = collect($productosServicios->items());
-        // Calcular SumBruto y SumBrutoConIva
-        $sumBruto = $productosServiciosCollection->sum(function($item) {
-            return $item->precio_bruto_unitario;
-        });
+        // Obtener registros paginados y totales
+        $result = $this->productServiceRepo->search(true, $search, $tipo, $id_rubro, $id_condicion_iva, $id_unidad_medida, $date_filter);
 
-        $sumBrutoConIva = $productosServiciosCollection->sum(function($item) {
-            return $item->precio_bruto_unitario + (($item->precio_bruto_unitario * $item->condicionIva->alicuota) / 100);
-        });
-
-
+        $productosServicios = $result['productosServicios'];
+        $sumBruto = $result['totalSum'];
+        $sumBrutoConIva = $result['totalSumWithIva'];
 
         $rubros = Rubro::all();
         $unidadesMedida = UnidadMedida::all();
