@@ -1,4 +1,4 @@
-@extends('main')
+@extends('welcome')
 
 @section('title', 'Detalles del Producto / Servicio')
 
@@ -24,6 +24,10 @@
 <div class="mb-3">
     <label class="form-label">Unidad de Medida</label>
     <p>{{ $productoServicio->unidadMedida->unidad_medida }}</p>
+</div>
+<div class="mb-3">
+    <label class="form-label">Fecha</label>
+    <p>{{ $productoServicioDTO->created_at }}</p>
 </div>
 <div class="mb-3">
     <label class="form-label">Condición de IVA</label>

@@ -1,4 +1,4 @@
-@extends('main')
+@extends('welcome')
 
 @section('title', 'Productos y Servicios')
 
@@ -81,22 +81,22 @@
 <table class="table table-bordered bg-white">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Tipo</th>
             <th>Código</th>
             <th>Producto / Servicio</th>
             <th>Precio Bruto Unitario</th>
+            <th>Fecha</th>
             <th width="280px">Acciones</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($productosServicios as $productoServicioDTO)
         <tr>
-            <td>{{ $productoServicioDTO->id }}</td>
             <td>{{ $productoServicioDTO->tipo }}</td>
             <td>{{ $productoServicioDTO->codigo }}</td>
             <td>{{ $productoServicioDTO->producto_servicio }}</td>
             <td>$ {{ $productoServicioDTO->precio_bruto_unitario }}</td>
+            <td>{{ $productoServicioDTO->created_at }}</td>
             <td>
                 <a class="btn btn-info" href="{{ route('productos-servicios.show', $productoServicioDTO->id) }}">
                     <i class="bi bi-eye"></i>

@@ -1,4 +1,4 @@
-@extends('main')
+@extends('welcome')
 
 @section('title', 'Condiciones de IVA')
 
@@ -30,7 +30,6 @@
 <table class="table table-bordered bg-white">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Código</th>
             <th>Condición de IVA</th>
             <th>Alicuota</th>
@@ -40,7 +39,6 @@
     <tbody>
         @foreach ($condicionesIva as $condicionIva)
             <tr>
-                <td>{{ $condicionIva->id }}</td>
                 <td>{{ $condicionIva->codigo }}</td>
                 <td>{{ $condicionIva->condicion_iva }}</td>
                 <td>{{ $condicionIva->alicuota }}</td>
