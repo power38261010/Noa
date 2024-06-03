@@ -95,8 +95,8 @@
             <td>{{ $productoServicioDTO->id }}</td>
             <td>{{ $productoServicioDTO->tipo }}</td>
             <td>{{ $productoServicioDTO->codigo }}</td>
-            <td>$ {{ $productoServicioDTO->producto_servicio }}</td>
-            <td>{{ $productoServicioDTO->precio_bruto_unitario }}</td>
+            <td>{{ $productoServicioDTO->producto_servicio }}</td>
+            <td>$ {{ $productoServicioDTO->precio_bruto_unitario }}</td>
             <td>
                 <a class="btn btn-info" href="{{ route('productos-servicios.show', $productoServicioDTO->id) }}">
                     <i class="bi bi-eye"></i>
