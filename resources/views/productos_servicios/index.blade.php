@@ -95,7 +95,7 @@
             <td>{{ $productoServicioDTO->id }}</td>
             <td>{{ $productoServicioDTO->tipo }}</td>
             <td>{{ $productoServicioDTO->codigo }}</td>
-            <td>{{ $productoServicioDTO->producto_servicio }}</td>
+            <td>$ {{ $productoServicioDTO->producto_servicio }}</td>
             <td>{{ $productoServicioDTO->precio_bruto_unitario }}</td>
             <td>
                 <a class="btn btn-info" href="{{ route('productos-servicios.show', $productoServicioDTO->id) }}">
@@ -116,6 +116,16 @@
         @endforeach
     </tbody>
 </table>
+
+<!-- Fila de resumen -->
+<div class="row bg-light text-dark p-3 mb-4">
+    <div class="col">
+        <strong>Precio Total: $</strong> {{ $sumBruto }}
+    </div>
+    <div class="col">
+        <strong>Precio Total con IVA: $</strong> {{ $sumBrutoConIva }}
+    </div>
+</div>
 
 <div class="d-flex justify-content-center">
     @isset($productosServicios)

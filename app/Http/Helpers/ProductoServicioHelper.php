@@ -25,18 +25,6 @@ class ProductoServicioHelper
             $this->parseCondicionIva($productoServicio->condicionIva)
         );
     }
-    public function parseProductoServicio2(ProductoServicio $productoServicio) {
-        return new ProductoServicioDTO(
-            $productoServicio->id,
-            $productoServicio->tipo,
-            $productoServicio->codigo,
-            $productoServicio->producto_servicio,
-            $productoServicio->precio_bruto_unitario,
-            $this->parseRubro($productoServicio->rubro),
-            $this->parseUnidadMedida($productoServicio->unidadMedida),
-            $this->parseCondicionIva($productoServicio->condicionIva)
-        );
-    }
 
     public function parseCondicionIva(CondicionIva $condicionIva) {
         return new CondicionIvaDTO(
