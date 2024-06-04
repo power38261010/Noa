@@ -89,3 +89,4 @@ Desde otra pestaña de la consola ejecutar en el siguiente orden:
 ./vendor/bin/sail artisan db:seed --class=ProductoServicioTableSeeder
 
 Luego de ello ya puede ingresar a un navegador desde la "url" "http://0.0.0.0/"
+Al momento de ser redireccionados al "login" optar por la opcion "Registrarse", luego de registrarse se puede usar el SPA
